@@ -1,13 +1,10 @@
 
 section.container {
-    /*border: 10px solid black;*/
-    padding: 10px 0 5px;
-    /*font-size: 20px;*/
-    font-family: Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    border: 10px solid black;
+    /*padding: 10px;*/
+    /*padding: 20px 10px;*/
+    padding: 10px 20px 5px;
+    /*padding: 10px 10px 10px 10px;*/
 
     header {
         display: flex;
@@ -16,7 +13,7 @@ section.container {
         gap: 20px;
 
         .logo {
-            background-color: darkgrey;
+            background-color: darkgray;
             height: 50px;
             width: 50px;
             border-radius: 50px;
@@ -24,70 +21,115 @@ section.container {
 
         nav {
             display: flex;
-            flex-flow: row wrap;
-            gap: 20px;
+            gap: 10px;
 
             a {
-                text-decoration: none;
-                color: white;
+                /*font-size: 15px;*/
                 background-color: lightgray;
+                color: white;
                 border-radius: 5px;
                 padding: 10px;
+                text-decoration: none;
 
                 &:hover {
-                    background-color: darkgrey;
+                    background-color: darkgray;
                 }
             }
         }
     }
 
     section.hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+        img {
+            width: 100%;
+        }
 
         &.bg-image {
-            height: 500px;
+            height: 250px;
+            border: 5px solid orange;
             background-image: url('whiteBackground.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            div.content {
+                font-size: 60px;
+                color: white;
+            }
         }
     }
 
-    section.product {
+    section.products {
         display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        gap: 20px;
-        .product-card {
-            display: flex;
-            flex-direction: column;
-            .product-image {
-                background-color: lightgray;
-                height: 400px;
+        flex-direction: column;
+        padding: 10px;
+        border: 2px solid green;
+        gap: 10px;
+
+        div.product {
+            /*padding: 10px;*/
+            border: 1px dashed blue;
+
+            /* pseudo-class that applies these properties to
+            the 2nd of the divs whose class is product */
+
+            &:nth-of-type(2) {
+                border-width: 3px;
+                border-style: solid;
+            }
+
+            /* a custom class that, which applied to an element
+            that has the class of "product", will work */
+
+            &.highlighted {
+                border-width: 3px;
+                border-style: solid;
+            }
+
+            .top-line {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+
+                h4, p {
+                    margin: 0;
+                }
+
+                p {
+                    text-transform: uppercase;
+                    font-size: 10px;
+                }
+            }
+
+            img {
+                width: 100%;
             }
         }
     }
 }
 
-
-@media screen and (min-width: 700px) {
+/* Overrides for tablet and up */
+@media screen and (min-width: 580px) {
     section.container {
-        .product {
-            flex-flow: row wrap;
-            .product-card {
+        section.products {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .product {
                 width: 45%;
             }
         }
     }
 }
 
-@media screen and (min-width: 1200px) {
+/* Overrides for desktop and up */
+@media screen and (min-width: 1100px) {
     section.container {
-        .product {
-            .product-card {
+        section.products {
+            .product {
                 width: 30%;
             }
         }
