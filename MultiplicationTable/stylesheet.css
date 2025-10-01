@@ -2,40 +2,83 @@ section.container {
     width: 70vw;
     height: 100vh;
     margin: 0 auto;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    border: 1px solid black;
 
     .generate-box {
         display: flex;
         gap: 10px;
 
-        form > div.inputs {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-            label {
-                display: flex;
-                gap: 10px;
-                justify-content: space-between;
-            }
-        }
-
         form {
             display: flex;
             flex-direction: row;
-        }
+            gap: 5px;
 
-        form > button {
-            height: 3rem;
+            div.inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                label {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: space-between;
+                }
+            }
+
+            form > button {
+                height: 3rem;
+            }
+        }
+    }
+
+    #generate {
+        background-color: lightcyan;
+
+        &:hover {
+            background-color: cyan;
         }
     }
 }
-#output{
+
+#output {
+    overflow: scroll;
+    max-height: 60vh;
+    max-width: 90vw;
+
     th, tr {
         border: 1px solid black;
         width: 50px;
     }
+    td{
+        min-width: 40px;
+        text-align: center
+    }
+
+    .highlighted{
+        background-color: palevioletred!important;
+        font-weight: bold;
+    }
+    td:first-child, td:last-child, tr:first-child, tr:last-child {
+        background-color: lightblue;
+    }
+
+    /*tr:nth-child(even):not(:first-child):not(:last-child) {*/
+    /*    background-color: lightgray;*/
+
+    /*    td:nth-child(even):not(:first-child):not(:last-child) {*/
+    /*        background-color: darkgrey;*/
+    /*    }*/
+    /*}*/
+
+    /*tr:not(:first-child):not(:last-child){*/
+    /*    td:nth-child(even):not(:first-child):not(:last-child) {*/
+    /*        background-color: lightgray;*/
+    /*    }*/
+    /*}*/
+
 }
