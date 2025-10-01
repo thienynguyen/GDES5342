@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<section class="container">
+    <h1>Multiplication Table Project</h1>
+    <h2>Create your own multiplication table that is rendered with an HTML table!</h2>
+    <div class="generate-box">
+        <form>
+            <div class="inputs">
+                <label for="rows">Rows:
+                    <input type="number" id="rows" value="10" placeholder="How many rows?">
+                </label>
+                <label for="cols">Columns:
+                    <input type="number" id="cols" value="10" placeholder="How many columns?">
+                </label>
+            </div>
+            <button type="button" id="generate" onclick="createWithHtmlTable(getRowsDesired(), getColsDesired())">
+                Generate
+            </button>
+        </form>
+    </div>
+    <div id="output"></div>
+</section>
+</body>
+<script src="javascript.js"></script>
+</html>

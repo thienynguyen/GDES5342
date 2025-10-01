@@ -1,0 +1,41 @@
+section.container {
+    width: 70vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .generate-box {
+        display: flex;
+        gap: 10px;
+
+        form > div.inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            label {
+                display: flex;
+                gap: 10px;
+                justify-content: space-between;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+        }
+
+        form > button {
+            height: 3rem;
+        }
+    }
+}
+#output{
+    th, tr {
+        border: 1px solid black;
+        width: 50px;
+    }
+}
