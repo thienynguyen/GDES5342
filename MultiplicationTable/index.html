@@ -25,7 +25,7 @@
                     <input type="number" id="highlightCol" placeholder="What col to highlight?">
                 </label>
             </div>
-            <button type="button" id="generate" onclick="createWithHtmlTable(getRowsDesired(), getColsDesired(), getHighlightRow(),getHighlightCol())">
+            <button type="button" id="generate" onclick="createWithHtmlTable(getInputValueAsNumber('rows'), getInputValueAsNumber('cols'), getInputValueAsNumber('highlightRow'),getInputValueAsNumber('highlightCol'))">
                 Generate
             </button>
         </form>

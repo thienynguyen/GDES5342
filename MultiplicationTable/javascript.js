@@ -1,22 +1,22 @@
 function createWithHtmlTable(rows, cols, highlightRow, highlightCol) {
     let string
     if (rows && cols){
-        string = "<table border='1'>\n"
+        string = "<section class = 'table'>\n"
         for (let row = 1; row <= rows; row++){
-            string += "<tr>\n"
+            string += "<div>\n"
             for (let col = 1; col <= cols; col++){
                 if (col === highlightCol){
-                    string += '<td class = "highlighted">'
+                    string += '<aside class = "highlighted">'
                 } else if (row === highlightRow){
-                    string += '<td class = "highlighted">'
+                    string += '<aside class = "highlighted">'
                 } else {
-                    string += "<td>"
+                    string += "<aside>"
                 }
-                string += col*row + "</td>\n"
+                string += col*row + "</aside>\n"
             }
-            string += "</tr>\n"
+            string += "</div>\n"
         }
-        string += "</table>\n"
+        string += "</section>\n"
     } else{
         string = "Provide some inputs."
     }
@@ -34,4 +34,7 @@ function getHighlightRow(){
 }
 function getHighlightCol(){
     return Number(document.getElementById("highlightCol").value);
+}
+function getInputValueAsNumber(inputId){
+    return Number(document.getElementById(inputId).value);
 }

@@ -48,37 +48,25 @@ section.container {
 #output {
     overflow: scroll;
     max-height: 60vh;
-    max-width: 90vw;
-
-    th, tr {
-        border: 1px solid black;
-        width: 50px;
+    max-width: 70vw;
+    section.table {
+        display: flex;
+        flex-direction: column;
+        div{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            aside{
+                border: 1px solid black;
+                min-width: 50px;
+                text-align: center;
+            }
+        }
+        .highlighted{
+            background-color: palevioletred!important;
+        }
+        div:nth-child(1), div:last-child, aside:nth-child(1), aside:last-child {
+            background-color: lightcyan;
+        }
     }
-    td{
-        min-width: 40px;
-        text-align: center
-    }
-
-    .highlighted{
-        background-color: palevioletred!important;
-        font-weight: bold;
-    }
-    td:first-child, td:last-child, tr:first-child, tr:last-child {
-        background-color: lightblue;
-    }
-
-    /*tr:nth-child(even):not(:first-child):not(:last-child) {*/
-    /*    background-color: lightgray;*/
-
-    /*    td:nth-child(even):not(:first-child):not(:last-child) {*/
-    /*        background-color: darkgrey;*/
-    /*    }*/
-    /*}*/
-
-    /*tr:not(:first-child):not(:last-child){*/
-    /*    td:nth-child(even):not(:first-child):not(:last-child) {*/
-    /*        background-color: lightgray;*/
-    /*    }*/
-    /*}*/
-
 }
