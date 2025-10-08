@@ -65,7 +65,7 @@ section.container {
         .highlighted{
             background-color: palevioletred!important;
         }
-        div:nth-child(1), div:last-child, aside:nth-child(1), aside:last-child {
+        div:nth-child(1) aside, div:last-child aside, aside:nth-child(1), aside:last-child {
             background-color: lightcyan;
         }
     }
